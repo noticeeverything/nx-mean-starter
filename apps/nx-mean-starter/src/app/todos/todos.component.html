@@ -1,0 +1,57 @@
+<div class="clear-nav fade-in" id="todos">
+    <div class="container">
+
+        <div *ngIf="working; else content" class="text-center mt-10">
+            <h1><span class="fa fa-spinner fa-spin"></span></h1>
+        </div>
+
+        <ng-template #content>
+            <div *ngIf="!(todos && todos.length); else todosList" class="alert alert-warning text-center">
+                <p>No todos found :(</p>
+                <button (click)="Add()" color="mdb-color" mdbBtn mdbWavesEffect size="sm">add one</button>
+            </div>
+
+            <ng-template #todosList>
+                <div class="text-center">
+                    <h1>Todos</h1>
+                    <button (click)="Add()" color="mdb-color" mdbBtn mdbWavesEffect size="large">add</button>
+                </div>
+                <hr>
+                <mdb-card *ngFor="let todo of todos"
+                          [ngClass]="{
+                            'alert-success': todo.done,
+                            'alert-warning': todo.isDueShortly() && !todo.done,
+                            'alert-danger': todo.isOverdue() && !todo.isDueShortly() && !todo.done,
+                            'alert-info': !todo.done && !todo.isOverdue() && !todo.isDueShortly()
+                          }"
+                          style="float: left; width: 32%; margin: 5px">
+                    <mdb-card-header class="px-5">
+                        <mdb-checkbox (change)="ToggleDone(todo)" [(ngModel)]="todo.done"></mdb-checkbox>
+                        <span [ngClass]="{ 'line-through': todo.done }">{{ todo.title }}</span>
+                        <span *ngIf="todo.isOverdue() && !todo.isDueShortly() && !todo.done">&nbsp;(overdue)</span>
+                        &nbsp;
+                        <span (click)="Edit(todo)" class="fa fa-pencil-alt"></span>
+                        &nbsp;
+                        <span (click)="Delete(todo)" class="fas fa-trash"></span>
+                    </mdb-card-header>
+                    <mdb-card-body>
+                        <p *ngIf="todo.description"
+                           [ngClass]="{ 'line-through': todo.done }"
+                           class="lead">{{ todo.description }}</p>
+                        <span *ngIf="!todo.done">Due: {{ todo.due | date: 'mediumDate' }}</span>
+                    </mdb-card-body>
+                </mdb-card>
+
+                <div class="clearfix"></div>
+                <div *ngIf="error">
+                    <hr>
+                    <div class="alert alert-danger">
+                        <span (click)="error = undefined" class="close fa fa-times"></span>
+                        {{ error }}
+                    </div>
+                </div>
+
+            </ng-template>
+        </ng-template>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="modal-body">
+    <form [formGroup]="todoForm">
+
+        <!-- Title -->
+        <div class="form-group">
+            <label for="title">Title (required)</label>
+            <input class="form-control" formControlName="title" id="title" mdbInput name="title" required>
+        </div>
+
+        <!-- Due -->
+        <div class="form-group">
+            <label for="due">Due Date (required)</label>
+            <input [value]="todoForm.get('due').value | date: 'MM/dd/yyyy'"
+                   bsDatepicker
+                   class="form-control"
+                   formControlName="due"
+                   id="due"
+                   type="text">
+        </div>
+
+        <!-- Description -->
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" formControlName="description" id="description" mdbInput
+                      name="description"></textarea>
+        </div>
+    </form>
+</div>
+
+<div class="modal-footer">
+    <div class="form-group">
+        <button (click)="Submit()" [disabled]="submitting || !todoForm.valid" color="mdb-color" mdbBtn mdbWavesEffect>
+            <span *ngIf="submitting" class="fad fa-spinner fa-spin"></span>
+            submit
+        </button>
+        <button (click)="Close()" color="dark" mdbBtn mdbWavesEffect outline="true">cancel</button>
+
+        <div *ngIf="error">
+            <hr>
+            <div class="alert alert-danger">
+                <span (click)="error = undefined" class="close fa fa-times"></span>
+                {{ error }}
+            </div>
+        </div>
+    </div>
+</div>

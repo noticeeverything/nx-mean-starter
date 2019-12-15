@@ -1,0 +1,17 @@
+{
+	"extends": "../../tslint.json",
+	"rules": {
+		"directive-selector": [
+			true,
+			"attribute",
+			"nxMeanStarter",
+			"camelCase"
+		],
+		"component-selector": [
+			true,
+			"element",
+			"nx-mean-starter",
+			"kebab-case"
+		]
+	}
+}

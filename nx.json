@@ -1,0 +1,24 @@
+{
+	"npmScope": "nx-mean-starter",
+	"implicitDependencies": {
+		"angular.json": "*",
+		"package.json": "*",
+		"tsconfig.json": "*",
+		"tslint.json": "*",
+		"nx.json": "*"
+	},
+	"projects": {
+		"nx-mean-starter-e2e": {
+			"tags": []
+		},
+		"nx-mean-starter": {
+			"tags": []
+		},
+		"api": {
+			"tags": []
+		},
+		"api-interfaces": {
+			"tags": []
+		}
+	}
+}
