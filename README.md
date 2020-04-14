@@ -1,5 +1,7 @@
 # NxMeanStarter by [Notice Everything Creative](https://noticeeverythingcreative.com)
 
+![build](https://gitlab.com/NoticeEverything/nx-mean-starter/badges/master/pipeline.svg)
+
 This project was generated using [Nx](https://nx.dev).
 
 ## Develop
