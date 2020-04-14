@@ -8,8 +8,8 @@ cache: &node
   paths:
     - node_modules/
     - .yarn
-    - .npm
-    - .cache/Cypress
+    - /root/.npm
+    - /root/.cache/Cypress
 
 test:
   stage: test
