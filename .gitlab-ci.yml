@@ -16,6 +16,8 @@ test:
   cache: *node
   services:
     - mongo:latest
+  variables:
+    DB_URI: "mongodb://mongo:27017"
   script:
     - yarn install --pure-lockfile --cache-folder .yarn
     - yarn test
