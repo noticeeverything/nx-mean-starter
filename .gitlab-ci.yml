@@ -1,15 +1,25 @@
 image: "cypress/base:12.16.1"
 
 stages:
+  - build
   - test
+
+# to cache Cypress binary we use environment variables
+# to point at the folders we can list as paths in "cache" job settings
+variables:
+  CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/cache/Cypress"
 
 cache: &node
   key: ${CI_COMMIT_REF_SLUG}
   paths:
     - node_modules/
     - .yarn
-    - /root/.npm
-    - /root/.cache/Cypress
+    - cache/Cypress
+
+install:
+  stage: build
+  script:
+    - yarn install --pure-lockfile --cache-folder .yarn
 
 test:
   stage: test
@@ -19,6 +29,5 @@ test:
   variables:
     DB_URI: "mongodb://mongo:27017"
   script:
-    - yarn install --pure-lockfile --cache-folder .yarn
     - yarn test
     - yarn e2e
