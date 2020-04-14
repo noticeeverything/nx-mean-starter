@@ -9,7 +9,7 @@ stages:
 variables:
   CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/cache/Cypress"
 
-cache: &node
+cache:
   key: ${CI_COMMIT_REF_SLUG}
   paths:
     - node_modules/
@@ -23,7 +23,6 @@ install:
 
 test:
   stage: test
-  cache: *node
   services:
     - mongo:latest
   variables:
