@@ -2,7 +2,7 @@ export const environment = {
 	production: false,
 	name: 'Test',
 	database: {
-		uri: 'mongodb://localhost:27017/nx-mean-starter-test',
+		uri: 'mongodb://mongo:27017/nx-mean-starter-test',
 		options: {
 			useNewUrlParser: true,
 			useUnifiedTopology: true
