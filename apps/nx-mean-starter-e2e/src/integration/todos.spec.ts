@@ -51,6 +51,7 @@ describe('Todos Page', () =>
 	{
 		cy.get('mdb-card').then(el => el.hasClass('alert-info'));
 		cy.editTodo();
+		cy.wait(500);
 		cy.get('mdb-card span.fa-pencil-alt').click();
 		cy.get('#due')
 			.type(`{selectall}${ moment().subtract(1, 'day').format('MM/DD/YYYY') }`);
@@ -67,6 +68,7 @@ describe('Todos Page', () =>
 	{
 		cy.get('mdb-card').then(el => el.hasClass('alert-info'));
 		cy.editTodo();
+		cy.wait(500);
 		cy.get('mdb-card span.fa-pencil-alt').click();
 		cy.get('#due')
 			.type(`{selectall}${ moment().format('MM/DD/YYYY') }`);
@@ -82,6 +84,7 @@ describe('Todos Page', () =>
 	it('completes the todo', () =>
 	{
 		cy.editTodo();
+		cy.wait(500);
 		cy.get('.form-check-input').click();
 		cy.wait('@editTodoCheck').then(xhr =>
 		{
