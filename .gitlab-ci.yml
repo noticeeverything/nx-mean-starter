@@ -1,0 +1,22 @@
+image: "cypress/base:12.16.1"
+
+services:
+  - mongo:latest
+
+stages:
+  - test
+
+cache: &node
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+    - .yarn
+    - .npm
+    - .cache/Cypress
+
+test:
+  cache: *node
+  script:
+    - yarn install --pure-lockfile --cache-folder .yarn
+    - yarn test
+    - yarn e2e
