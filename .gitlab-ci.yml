@@ -1,8 +1,5 @@
 image: "cypress/base:12.16.1"
 
-services:
-  - mongo:latest
-
 stages:
   - test
 
@@ -16,6 +13,8 @@ cache: &node
 
 test:
   cache: *node
+  services:
+    - mongo:latest
   script:
     - yarn install --pure-lockfile --cache-folder .yarn
     - yarn test
