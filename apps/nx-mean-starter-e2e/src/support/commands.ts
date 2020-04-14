@@ -13,8 +13,11 @@ declare namespace Cypress
 	interface Chainable<Subject>
 	{
 		addTodo():void;
+
 		deleteTodo():void;
+
 		editTodo():void;
+
 		getTodos():void;
 	}
 }

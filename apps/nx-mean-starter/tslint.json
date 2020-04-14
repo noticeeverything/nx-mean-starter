@@ -13,5 +13,10 @@
 			"nx-mean-starter",
 			"kebab-case"
 		]
+	},
+	"linterOptions": {
+		"exclude": [
+			"!**/*"
+		]
 	}
 }

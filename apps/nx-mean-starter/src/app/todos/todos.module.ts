@@ -16,7 +16,7 @@ import {
 } from 'angular-bootstrap-md';
 import { TodoFormComponent } from './todo-form/todo-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BsDatepickerModule, BsDatepickerConfig } from 'ngx-bootstrap';
+import { BsDatepickerModule, BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
 	declarations: [TodosComponent, TodoFormComponent],

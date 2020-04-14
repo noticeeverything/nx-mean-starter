@@ -9,7 +9,10 @@
 	},
 	"projects": {
 		"nx-mean-starter-e2e": {
-			"tags": []
+			"tags": [],
+			"implicitDependencies": [
+				"nx-mean-starter"
+			]
 		},
 		"nx-mean-starter": {
 			"tags": []
@@ -19,6 +22,19 @@
 		},
 		"api-interfaces": {
 			"tags": []
+		}
+	},
+	"tasksRunnerOptions": {
+		"default": {
+			"runner": "@nrwl/workspace/tasks-runners/default",
+			"options": {
+				"cacheableOperations": [
+					"build",
+					"lint",
+					"test",
+					"e2e"
+				]
+			}
 		}
 	}
 }

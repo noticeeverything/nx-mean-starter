@@ -95,5 +95,5 @@ describe('Todos Page', () =>
 		cy.deleteTodo();
 		cy.get('mdb-card span.fa-trash').click();
 		cy.wait('@deleteTodoCheck').then(xhr => assert.equal(xhr.response.body['success'], true));
-	})
+	});
 });
