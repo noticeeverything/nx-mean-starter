@@ -12,9 +12,15 @@ cache: &node
     - .cache/Cypress
 
 test:
+  stage: test
   cache: *node
   services:
-    - mongo:latest
+    - name: khezen/mongo:4.2
+      alias: mongo
+  variables:
+    AUTH: n
+    DB_NAME: nx-mean-starter-test
+
   script:
     - yarn install --pure-lockfile --cache-folder .yarn
     - yarn test
