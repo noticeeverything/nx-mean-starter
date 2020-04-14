@@ -93,6 +93,7 @@ describe('Todos Page', () =>
 	it('deletes the todo', () =>
 	{
 		cy.deleteTodo();
+		cy.wait(500);
 		cy.get('mdb-card span.fa-trash').click();
 		cy.wait('@deleteTodoCheck').then(xhr => assert.equal(xhr.response.body['success'], true));
 	});
