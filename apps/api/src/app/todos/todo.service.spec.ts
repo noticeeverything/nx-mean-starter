@@ -2,7 +2,7 @@ import { TodoService } from './todo.service';
 import { Test } from '@nestjs/testing';
 import { model, Model } from 'mongoose';
 import { TodoSchema } from './todo.schema';
-import { Todo, TodoDocument } from '@todos/api-interfaces';
+import { Todo, TodoDocument } from '@nx-mean-starter/api-interfaces';
 import * as moment from 'moment';
 import { ObjectId } from 'bson';
 
@@ -56,7 +56,7 @@ describe('TodoService', () =>
 			};
 
 			spyOn(repo, 'create').and.returnValue(todo);
-			const res = await service.Add(todo);
+			const res = await service.Add(todo as any);
 			expect(res).toEqual(todo);
 			expect(repo.create).toHaveBeenCalledWith(todo);
 		});

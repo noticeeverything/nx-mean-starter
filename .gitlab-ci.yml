@@ -1,4 +1,4 @@
-image: "cypress/base:12.16.1"
+image: "cypress/base_old:12.16.1"
 
 stages:
   - build

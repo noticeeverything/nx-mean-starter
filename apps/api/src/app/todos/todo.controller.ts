@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, Put, Param, Delete } from '@nestjs/common';
 import { TodoService } from './todo.service';
-import { Todo } from '@todos/api-interfaces';
+import { Todo, TodoDto } from '@nx-mean-starter/api-interfaces';
 
 @Controller('/api/todos')
 export class TodoController
@@ -8,7 +8,7 @@ export class TodoController
 	constructor(private readonly todoService:TodoService) {}
 
 	@Post()
-	async AddTodo(@Body() body:Todo)
+	async AddTodo(@Body() body:TodoDto)
 	{
 		try
 		{

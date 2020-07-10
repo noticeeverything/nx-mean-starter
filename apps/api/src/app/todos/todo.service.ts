@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { TodoModel } from './todo.decorators';
 import { Model } from 'mongoose';
-import { TodoDocument, Todo } from '@todos/api-interfaces';
+import { TodoDocument, Todo } from '@nx-mean-starter/api-interfaces';
 
 @Injectable()
 export class TodoService

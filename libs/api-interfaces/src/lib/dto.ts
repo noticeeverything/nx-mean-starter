@@ -11,7 +11,7 @@ export class TodoDto implements Todo
 
 	done:boolean;
 
-	due:Date;
+	due:Date|string;
 
 	title:string;
 

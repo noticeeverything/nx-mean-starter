@@ -26,7 +26,6 @@
 							"apps/todos/src/assets"
 						],
 						"styles": [
-							"./node_modules/bootstrap/dist/css/bootstrap.min.css",
 							"./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
 							"node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss",
 							"node_modules/@fortawesome/fontawesome-free/scss/solid.scss",
@@ -34,7 +33,6 @@
 							"node_modules/@fortawesome/fontawesome-free/scss/brands.scss",
 							"node_modules/angular-bootstrap-md/assets/scss/bootstrap/bootstrap.scss",
 							"node_modules/angular-bootstrap-md/assets/scss/mdb.scss",
-							"node_modules/ngx-bootstrap/datepicker/bs-datepicker.scss",
 							"node_modules/animate.css/animate.css",
 							"apps/todos/src/styles.scss"
 						],
@@ -100,7 +98,7 @@
 						],
 						"exclude": [
 							"**/node_modules/**",
-							"!apps/todos/**"
+							"!apps/todos/**/*"
 						]
 					}
 				},
@@ -145,7 +143,7 @@
 						],
 						"exclude": [
 							"**/node_modules/**",
-							"!apps/todos-e2e/**"
+							"!apps/todos-e2e/**/*"
 						]
 					}
 				}
@@ -211,7 +209,7 @@
 						],
 						"exclude": [
 							"**/node_modules/**",
-							"!apps/api/**"
+							"!apps/api/**/*"
 						]
 					}
 				},
@@ -240,7 +238,7 @@
 						],
 						"exclude": [
 							"**/node_modules/**",
-							"!libs/api-interfaces/**"
+							"!libs/api-interfaces/**/*"
 						]
 					}
 				},
@@ -251,6 +249,41 @@
 						"tsConfig": "libs/api-interfaces/tsconfig.spec.json",
 						"passWithNoTests": true
 					}
+				}
+			}
+		},
+		"base": {
+			"projectType": "library",
+			"root": "libs/base",
+			"sourceRoot": "libs/base/src",
+			"prefix": "todos",
+			"architect": {
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": [
+							"libs/base/tsconfig.lib.json",
+							"libs/base/tsconfig.spec.json"
+						],
+						"exclude": [
+							"**/node_modules/**",
+							"!libs/base/**/*"
+						]
+					}
+				},
+				"test": {
+					"builder": "@nrwl/jest:jest",
+					"options": {
+						"jestConfig": "libs/base/jest.config.js",
+						"tsConfig": "libs/base/tsconfig.spec.json",
+						"passWithNoTests": true,
+						"setupFile": "libs/base/src/test-setup.ts"
+					}
+				}
+			},
+			"schematics": {
+				"@nrwl/angular:component": {
+					"style": "scss"
 				}
 			}
 		}

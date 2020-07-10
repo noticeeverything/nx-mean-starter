@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subscription, Observable } from 'rxjs';
-import { Todo, ApiResponse, TodoDto } from '@todos/api-interfaces';
+import { Todo, ApiResponse, TodoDto } from '@nx-mean-starter/api-interfaces';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { tap } from 'rxjs/operators';

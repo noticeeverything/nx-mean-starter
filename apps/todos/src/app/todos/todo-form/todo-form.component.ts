@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MDBModalRef, ModalOptions } from 'angular-bootstrap-md';
 import { TodoService } from '../todo.service';
-import { Todo } from '@todos/api-interfaces';
+import { Todo } from '@nx-mean-starter/api-interfaces';
 import * as moment from 'moment';
 
 @Component({

@@ -1,4 +1,4 @@
-import { TodoDocument } from '@todos/api-interfaces';
+import { TodoDocument } from '@nx-mean-starter/api-interfaces';
 import * as mongoose from 'mongoose';
 import { TodoSchema } from './todo.schema';
 
