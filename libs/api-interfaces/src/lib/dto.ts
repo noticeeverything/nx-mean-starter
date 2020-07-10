@@ -7,6 +7,8 @@ export class TodoDto implements Todo
 
 	createdAt:Date;
 
+	updatedAt:Date;
+
 	description?:string;
 
 	done:boolean;
@@ -14,8 +16,6 @@ export class TodoDto implements Todo
 	due:Date|string;
 
 	title:string;
-
-	updatedAt:Date;
 
 	constructor(todo:Todo)
 	{
