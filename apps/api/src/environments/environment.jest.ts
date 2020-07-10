@@ -2,7 +2,7 @@ export const environment = {
 	production: false,
 	name: 'Test',
 	database: {
-		uri: `${ process.env.DB_URI || 'mongodb://localhost:27017' }/nx-mean-starter-test`,
+		uri: `${ process.env.DB_URI || 'mongodb://localhost:27017' }/todos-test`,
 		options: {
 			useNewUrlParser: true,
 			useUnifiedTopology: true

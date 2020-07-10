@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-	selector: 'nx-mean-starter-root',
+	selector: 'todos-root',
 	template: `
-        <nx-mean-starter-nav></nx-mean-starter-nav>
+        <todos-nav></todos-nav>
         <router-outlet></router-outlet>
 	`
 })

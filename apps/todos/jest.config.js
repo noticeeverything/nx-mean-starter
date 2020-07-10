@@ -1,7 +1,7 @@
 module.exports = {
 	name: 'nx-mean-starter',
 	preset: '../../jest.config.js',
-	coverageDirectory: '../../coverage/apps/nx-mean-starter',
+	coverageDirectory: '../../coverage/apps/todos',
 	snapshotSerializers: [
 		'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
 		'jest-preset-angular/build/AngularSnapshotSerializer.js',

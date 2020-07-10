@@ -1,5 +1,5 @@
 {
-	"npmScope": "nx-mean-starter",
+	"npmScope": "todos",
 	"implicitDependencies": {
 		"angular.json": "*",
 		"package.json": "*",
@@ -8,13 +8,13 @@
 		"nx.json": "*"
 	},
 	"projects": {
-		"nx-mean-starter-e2e": {
+		"todos-e2e": {
 			"tags": [],
 			"implicitDependencies": [
-				"nx-mean-starter"
+				"todos"
 			]
 		},
-		"nx-mean-starter": {
+		"todos": {
 			"tags": []
 		},
 		"api": {

@@ -2,16 +2,18 @@ import { Document } from 'mongoose';
 
 export interface Todo
 {
-	_id:any;
-	createdAt:Date;
 	description?:string;
-	done:boolean;
-	due:Date;
+	done?:boolean;
+	due:Date|string;
 	title:string;
-	updatedAt:Date;
 }
 
-export interface TodoDocument extends Todo, Document {}
+export interface TodoDocument extends Todo, Document
+{
+	_id:any;
+	createdAt:Date;
+	updatedAt:Date;
+}
 
 export interface ApiResponse
 {

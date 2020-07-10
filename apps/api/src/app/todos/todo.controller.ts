@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, Put, Param, Delete } from '@nestjs/common';
 import { TodoService } from './todo.service';
-import { Todo } from '@nx-mean-starter/api-interfaces';
+import { Todo } from '@todos/api-interfaces';
 
 @Controller('/api/todos')
 export class TodoController

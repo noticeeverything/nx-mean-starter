@@ -21,10 +21,10 @@
 		"skipDefaultLibCheck": true,
 		"baseUrl": ".",
 		"paths": {
-			"@nx-mean-starter/api-interfaces": [
+			"@todos/api-interfaces": [
 				"libs/api-interfaces/src/index.ts"
 			],
-			"@nx-mean-starter/base": [
+			"@todos/base": [
 				"libs/base/index.ts"
 			]
 		}

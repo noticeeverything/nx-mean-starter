@@ -6,6 +6,6 @@
 	"pluginsFile": "./src/plugins/index",
 	"supportFile": "./src/support/index.ts",
 	"video": false,
-	"screenshotsFolder": "../../dist/cypress/apps/nx-mean-starter-e2e/screenshots",
+	"screenshotsFolder": "../../dist/cypress/apps/todos-e2e/screenshots",
 	"chromeWebSecurity": false
 }

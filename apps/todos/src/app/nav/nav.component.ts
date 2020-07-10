@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
-	selector: 'nx-mean-starter-nav',
+	selector: 'todos-nav',
 	templateUrl: './nav.component.html',
 	styleUrls: ['./nav.component.scss'],
 	encapsulation: ViewEncapsulation.None

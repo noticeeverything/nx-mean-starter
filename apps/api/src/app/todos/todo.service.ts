@@ -1,20 +1,19 @@
 import { Injectable } from '@nestjs/common';
 import { TodoModel } from './todo.decorators';
 import { Model } from 'mongoose';
-import { TodoDocument, Todo } from '@nx-mean-starter/api-interfaces';
+import { TodoDocument, Todo } from '@todos/api-interfaces';
 
 @Injectable()
 export class TodoService
 {
 	constructor(@TodoModel private readonly todoRepository:Model<TodoDocument>) {}
 
-	async Add(t:Todo):Promise<Todo>
+	async Add(t:Todo):Promise<TodoDocument>
 	{
-		const todo = new this.todoRepository(t);
-		return await todo.save();
+		return await this.todoRepository.create(t);
 	}
 
-	async Delete(id:string):Promise<Todo>
+	async Delete(id:string):Promise<TodoDocument>
 	{
 		return this.todoRepository.findByIdAndRemove(id);
 	}
@@ -24,7 +23,7 @@ export class TodoService
 		return this.todoRepository.find();
 	}
 
-	async Update(id:string, todo:Todo):Promise<Todo>
+	async Update(id:string, todo:Todo):Promise<TodoDocument>
 	{
 		return this.todoRepository.findByIdAndUpdate(id, todo, { new: true });
 	}

@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MDBModalRef, ModalOptions } from 'angular-bootstrap-md';
 import { TodoService } from '../todo.service';
-import { Todo } from '@nx-mean-starter/api-interfaces';
+import { Todo } from '@todos/api-interfaces';
+import * as moment from 'moment';
 
 @Component({
-	selector: 'nx-mean-starter-todo-form',
+	selector: 'todos-todo-form',
 	templateUrl: './todo-form.component.html',
 	styleUrls: ['./todo-form.component.scss']
 })
@@ -37,7 +38,7 @@ export class TodoFormComponent implements OnInit
 		if (this.modalOptions.data.hasOwnProperty('todo'))
 		{
 			this.todo = this.modalOptions.data['todo'];
-			console.log(this.todo);
+			this.todo.due = moment(this.todo.due).toDate();
 			this.todoForm.patchValue(this.todo);
 		}
 	}

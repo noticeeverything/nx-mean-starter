@@ -10,7 +10,7 @@
 		"component-selector": [
 			true,
 			"element",
-			"nx-mean-starter",
+			"todos",
 			"kebab-case"
 		]
 	},
