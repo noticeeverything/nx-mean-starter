@@ -106,8 +106,6 @@
 					"builder": "@nrwl/jest:jest",
 					"options": {
 						"jestConfig": "apps/todos/jest.config.js",
-						"tsConfig": "apps/todos/tsconfig.spec.json",
-						"setupFile": "apps/todos/src/test-setup.ts",
 						"styles": [
 							"./node_modules/bootstrap/dist/css/bootstrap.min.css",
 							"./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css"
@@ -217,7 +215,6 @@
 					"builder": "@nrwl/jest:jest",
 					"options": {
 						"jestConfig": "apps/api/jest.config.js",
-						"tsConfig": "apps/api/tsconfig.spec.json",
 						"passWithNoTests": true
 					}
 				}
@@ -246,44 +243,8 @@
 					"builder": "@nrwl/jest:jest",
 					"options": {
 						"jestConfig": "libs/api-interfaces/jest.config.js",
-						"tsConfig": "libs/api-interfaces/tsconfig.spec.json",
 						"passWithNoTests": true
 					}
-				}
-			}
-		},
-		"base": {
-			"projectType": "library",
-			"root": "libs/base",
-			"sourceRoot": "libs/base/src",
-			"prefix": "todos",
-			"architect": {
-				"lint": {
-					"builder": "@angular-devkit/build-angular:tslint",
-					"options": {
-						"tsConfig": [
-							"libs/base/tsconfig.lib.json",
-							"libs/base/tsconfig.spec.json"
-						],
-						"exclude": [
-							"**/node_modules/**",
-							"!libs/base/**/*"
-						]
-					}
-				},
-				"test": {
-					"builder": "@nrwl/jest:jest",
-					"options": {
-						"jestConfig": "libs/base/jest.config.js",
-						"tsConfig": "libs/base/tsconfig.spec.json",
-						"passWithNoTests": true,
-						"setupFile": "libs/base/src/test-setup.ts"
-					}
-				}
-			},
-			"schematics": {
-				"@nrwl/angular:component": {
-					"style": "scss"
 				}
 			}
 		}

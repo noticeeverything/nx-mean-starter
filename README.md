@@ -1,4 +1,4 @@
-# NxMeanStarter by [Notice Everything Creative](https://noticeeverythingcreative.com)
+# NxMeanStarter by [Notice Everything Creative](https://noticeeverything.com)
 
 ![build](https://gitlab.com/NoticeEverything/nx-mean-starter/badges/master/pipeline.svg)
 

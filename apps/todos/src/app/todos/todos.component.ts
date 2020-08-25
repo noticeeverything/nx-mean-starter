@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoService } from './todo.service';
-import { BaseComponent } from '@nx-mean-starter/base';
+import { BaseComponent } from '@noticeeverything/ngx-core';
 import { Todo, TodoDto } from '@nx-mean-starter/api-interfaces';
 import { takeUntil, filter } from 'rxjs/operators';
 import { MDBModalService } from 'angular-bootstrap-md';
