@@ -1,6 +1,6 @@
 {
 	"name": "nx-mean-starter",
-	"author": "Notice Everything Creative <https://noticeeverythingcreative.com>",
+	"author": "Notice Everything Creative <https://noticeeverything.com>",
 	"description": "A MEAN stack starter using Nx and Angular CLI",
 	"version": "0.0.0",
 	"license": "MIT",
@@ -12,7 +12,7 @@
 		"affected:apps": "nx affected:apps",
 		"affected:libs": "nx affected:libs",
 		"affected:build": "nx affected:build",
-		"affected:e2e": "start-server-and-test 'yarn run-p start.api.test' http://localhost:3333 'nx affected:e2e --headless --base=origin/master'",
+		"affected:e2e": "start-server-and-test 'yarn start.api.test' 3333 'nx affected:e2e --headless --base=origin/master'",
 		"affected:test": "nx affected:test --base=origin/master",
 		"affected:lint": "nx affected:lint --base=origin/master",
 		"affected:dep-graph": "nx affected:dep-graph",
