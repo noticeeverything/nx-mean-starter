@@ -28,6 +28,6 @@ test:
   variables:
     DB_URI: "mongodb://mongo:27017"
   script:
-    - yarn lint
-    - yarn test
-    - yarn e2e
+    - yarn affected:lint
+    - yarn affected:test
+    - yarn affected:e2e
