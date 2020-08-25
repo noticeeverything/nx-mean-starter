@@ -2,6 +2,7 @@ import { OnDestroy } from '@angular/core';
 // libs
 import { Subject } from 'rxjs';
 
+// TODO: Add Angular decorator.
 export abstract class BaseComponent implements OnDestroy
 {
 	private _destroy$:Subject<any>;

@@ -3,9 +3,9 @@
 	"implicitDependencies": {
 		"angular.json": "*",
 		"package.json": "*",
-		"tsconfig.json": "*",
 		"tslint.json": "*",
-		"nx.json": "*"
+		"nx.json": "*",
+		"tsconfig.base.json": "*"
 	},
 	"projects": {
 		"todos-e2e": {
@@ -29,15 +29,21 @@
 	},
 	"tasksRunnerOptions": {
 		"default": {
-			"runner": "@nrwl/workspace/tasks-runners/default",
+			"runner": "@nrwl/nx-cloud",
 			"options": {
+				"accessToken": "MWY5MjA3OTEtM2QyMC00NGY3LTk1ZTQtMjI2NjY1MmFlNTlkfHJlYWQtd3JpdGU=",
 				"cacheableOperations": [
 					"build",
-					"lint",
 					"test",
+					"lint",
 					"e2e"
-				]
+				],
+				"canTrackAnalytics": false,
+				"showUsageWarnings": true
 			}
 		}
+	},
+	"affected": {
+		"defaultBase": "master"
 	}
 }
