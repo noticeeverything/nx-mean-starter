@@ -13,13 +13,13 @@ cache:
   key: ${CI_COMMIT_REF_SLUG}
   paths:
     - node_modules/
-    - .yarn
+    - /usr/local/share/.cache/yarn
     - cache/Cypress
 
 install:
   stage: build
   script:
-    - yarn install --pure-lockfile --cache-folder .yarn
+    - yarn install --pure-lockfile --cache-folder /usr/local/share/.cache/yarn
 
 test:
   stage: test
