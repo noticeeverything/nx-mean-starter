@@ -19,7 +19,7 @@ cache:
 install:
   stage: build
   script:
-    - yarn install --pure-lockfile --cache-folder /usr/local/share/.cache/yarn
+    - yarn install --ci --cache-folder /usr/local/share/.cache/yarn
 
 test:
   stage: test
