@@ -10,9 +10,7 @@
 	"projects": {
 		"todos-e2e": {
 			"tags": [],
-			"implicitDependencies": [
-				"todos"
-			]
+			"implicitDependencies": ["todos"]
 		},
 		"todos": {
 			"tags": []
@@ -29,12 +27,7 @@
 			"runner": "@nrwl/nx-cloud",
 			"options": {
 				"accessToken": "MWY5MjA3OTEtM2QyMC00NGY3LTk1ZTQtMjI2NjY1MmFlNTlkfHJlYWQtd3JpdGU=",
-				"cacheableOperations": [
-					"build",
-					"test",
-					"lint",
-					"e2e"
-				],
+				"cacheableOperations": ["build", "test", "lint", "e2e"],
 				"canTrackAnalytics": false,
 				"showUsageWarnings": true
 			}

@@ -36,9 +36,7 @@
 							"node_modules/animate.css/animate.css",
 							"apps/todos/src/styles.scss"
 						],
-						"scripts": [
-							"node_modules/jquery/dist/jquery.min.js"
-						]
+						"scripts": ["node_modules/jquery/dist/jquery.min.js"]
 					},
 					"configurations": {
 						"production": {
@@ -96,10 +94,7 @@
 							"apps/todos/tsconfig.app.json",
 							"apps/todos/tsconfig.spec.json"
 						],
-						"exclude": [
-							"**/node_modules/**",
-							"!apps/todos/**/*"
-						]
+						"exclude": ["**/node_modules/**", "!apps/todos/**/*"]
 					}
 				},
 				"test": {
@@ -136,9 +131,7 @@
 				"lint": {
 					"builder": "@angular-devkit/build-angular:tslint",
 					"options": {
-						"tsConfig": [
-							"apps/todos-e2e/tsconfig.e2e.json"
-						],
+						"tsConfig": ["apps/todos-e2e/tsconfig.e2e.json"],
 						"exclude": [
 							"**/node_modules/**",
 							"!apps/todos-e2e/**/*"
@@ -152,7 +145,7 @@
 			"sourceRoot": "apps/api/src",
 			"projectType": "application",
 			"prefix": "api",
-			"schematics": { },
+			"schematics": {},
 			"architect": {
 				"build": {
 					"builder": "@nrwl/node:build",
@@ -160,9 +153,7 @@
 						"outputPath": "dist/apps/api",
 						"main": "apps/api/src/main.ts",
 						"tsConfig": "apps/api/tsconfig.app.json",
-						"assets": [
-							"apps/api/src/assets"
-						],
+						"assets": ["apps/api/src/assets"],
 						"buildLibsFromSource": true
 					},
 					"configurations": {
@@ -205,10 +196,7 @@
 							"apps/api/tsconfig.app.json",
 							"apps/api/tsconfig.spec.json"
 						],
-						"exclude": [
-							"**/node_modules/**",
-							"!apps/api/**/*"
-						]
+						"exclude": ["**/node_modules/**", "!apps/api/**/*"]
 					}
 				},
 				"test": {
@@ -224,7 +212,7 @@
 			"root": "libs/api-interfaces",
 			"sourceRoot": "libs/api-interfaces/src",
 			"projectType": "library",
-			"schematics": { },
+			"schematics": {},
 			"architect": {
 				"lint": {
 					"builder": "@angular-devkit/build-angular:tslint",
