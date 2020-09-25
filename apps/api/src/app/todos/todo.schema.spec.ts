@@ -2,36 +2,30 @@ import { TodoDocument } from '@nx-mean-starter/api-interfaces';
 import * as mongoose from 'mongoose';
 import { TodoSchema } from './todo.schema';
 
-describe('TodoSchema', () =>
-{
-	let todoModel:mongoose.Model<TodoDocument>;
+describe('TodoSchema', () => {
+	let todoModel: mongoose.Model<TodoDocument>;
 
-	beforeEach(async () =>
-	{
+	beforeEach(async () => {
 		todoModel = mongoose.model('Todo', TodoSchema);
 	});
 
-	afterEach(async () =>
-	{
+	afterEach(async () => {
 		todoModel = undefined;
 	});
 
-	it('saves to the todos collection', () =>
-	{
+	it('saves to the todos collection', () => {
 		expect(todoModel.collection.name).toBe('todos');
 	});
 
-	it('creates an instance of Todo', async () =>
-	{
+	it('creates an instance of Todo', async () => {
 		const todo = new todoModel({
-			name: 'todoName'
+			name: 'todoName',
 		});
 
 		expect(todo instanceof mongoose.Model).toBe(true);
 	});
 
-	it('fails to save an invalid document', async () =>
-	{
+	it('fails to save an invalid document', async () => {
 		const todo = new todoModel(),
 			error = todo.validateSync();
 

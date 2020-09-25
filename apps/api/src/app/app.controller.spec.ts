@@ -1,25 +1,21 @@
 import { Test } from '@nestjs/testing';
 import { AppController } from './app.controller';
 
-describe('AppController', () =>
-{
-	let controller:AppController;
+describe('AppController', () => {
+	let controller: AppController;
 
-	beforeEach(async () =>
-	{
+	beforeEach(async () => {
 		const module = await Test.createTestingModule({
-			controllers: [AppController]
+			controllers: [AppController],
 		}).compile();
 		controller = module.get(AppController);
 	});
 
-	it('creates the controller', async () =>
-	{
+	it('creates the controller', async () => {
 		expect(controller).toBeTruthy();
 	});
 
-	it('has an Index method', async () =>
-	{
+	it('has an Index method', async () => {
 		spyOn(controller, 'Index').and.returnValue('It works');
 		const res = await controller.Index({} as any);
 		expect(res).toEqual('It works');

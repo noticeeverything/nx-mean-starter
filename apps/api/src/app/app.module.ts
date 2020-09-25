@@ -6,9 +6,12 @@ import { AppController } from './app.controller';
 
 @Module({
 	imports: [
-		MongooseModule.forRoot(environment.database.uri, environment.database.options),
-		TodosModule
+		MongooseModule.forRoot(
+			environment.database.uri,
+			environment.database.options,
+		),
+		TodosModule,
 	],
-	controllers: [AppController]
+	controllers: [AppController],
 })
 export class AppModule {}

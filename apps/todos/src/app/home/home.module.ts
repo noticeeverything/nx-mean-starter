@@ -7,10 +7,6 @@ import { IconsModule } from 'angular-bootstrap-md';
 
 @NgModule({
 	declarations: [HomeComponent],
-	imports: [
-		CommonModule,
-		HomeRoutingModule,
-		IconsModule
-	]
+	imports: [CommonModule, HomeRoutingModule, IconsModule],
 })
 export class HomeModule {}

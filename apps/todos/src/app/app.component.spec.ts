@@ -5,27 +5,24 @@ import { MockComponent } from 'ng-mocks';
 import { RouterOutlet } from '@angular/router';
 import { NavComponent } from './nav/nav.component';
 
-describe('AppComponent', () =>
-{
-	let spectator:SpectatorRouting<AppComponent>;
-	let app:AppComponent;
+describe('AppComponent', () => {
+	let spectator: SpectatorRouting<AppComponent>;
+	let app: AppComponent;
 
 	const createComponent = createRoutingFactory({
 		component: AppComponent,
 		declarations: [
 			MockComponent(RouterOutlet),
-			MockComponent(NavComponent)
-		]
+			MockComponent(NavComponent),
+		],
 	});
 
-	beforeEach(() =>
-	{
+	beforeEach(() => {
 		spectator = createComponent();
 		app = spectator.component;
 	});
 
-	it('should create the app', () =>
-	{
+	it('should create the app', () => {
 		expect(app).toBeTruthy();
 	});
 });

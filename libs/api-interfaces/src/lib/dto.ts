@@ -1,24 +1,22 @@
 import * as moment from 'moment';
 import { Todo } from './interfaces';
 
-export class TodoDto implements Todo
-{
-	_id:any;
+export class TodoDto implements Todo {
+	_id: any;
 
-	createdAt:Date;
+	createdAt: Date;
 
-	updatedAt:Date;
+	updatedAt: Date;
 
-	description?:string;
+	description?: string;
 
-	done:boolean;
+	done: boolean;
 
-	due:Date|string;
+	due: Date | string;
 
-	title:string;
+	title: string;
 
-	constructor(todo:Todo)
-	{
+	constructor(todo: Todo) {
 		this._id = todo._id;
 		this.createdAt = todo.createdAt;
 		this.description = todo.description;
@@ -28,13 +26,11 @@ export class TodoDto implements Todo
 		this.updatedAt = todo.updatedAt;
 	}
 
-	isDueShortly()
-	{
+	isDueShortly() {
 		return moment(this.due).diff(moment(), 'day', false) === 0;
 	}
 
-	isOverdue()
-	{
+	isOverdue() {
 		return moment(this.due).isBefore(moment());
 	}
 }

@@ -8,52 +8,46 @@
 // https://on.cypress.io/custom-commands
 // ***********************************************
 // eslint-disable-next-line @typescript-eslint/no-namespace
-declare namespace Cypress
-{
-	interface Chainable<Subject>
-	{
-		addTodo():void;
+declare namespace Cypress {
+	interface Chainable<Subject> {
+		addTodo(): void;
 
-		deleteTodo():void;
+		deleteTodo(): void;
 
-		editTodo():void;
+		editTodo(): void;
 
-		getTodos():void;
+		getTodos(): void;
 	}
 }
 
-Cypress.Commands.add('addTodo', () =>
-{
+Cypress.Commands.add('addTodo', () => {
 	cy.server();
 	cy.route({
 		method: 'POST',
-		url: '/api/todos'
+		url: '/api/todos',
 	}).as('addTodoCheck');
 });
 
-Cypress.Commands.add('deleteTodo', () =>
-{
+Cypress.Commands.add('deleteTodo', () => {
 	cy.server();
 	cy.route({
 		method: 'DELETE',
-		url: '/api/todos/*'
+		url: '/api/todos/*',
 	}).as('deleteTodoCheck');
 });
 
-Cypress.Commands.add('editTodo', () =>
-{
+Cypress.Commands.add('editTodo', () => {
 	cy.server();
 	cy.route({
 		method: 'PUT',
-		url: '/api/todos/*'
+		url: '/api/todos/*',
 	}).as('editTodoCheck');
 });
 
-Cypress.Commands.add('getTodos', () =>
-{
+Cypress.Commands.add('getTodos', () => {
 	cy.server();
 	cy.route({
 		method: 'GET',
-		url: '/api/todos'
+		url: '/api/todos',
 	}).as('getTodosCheck');
 });

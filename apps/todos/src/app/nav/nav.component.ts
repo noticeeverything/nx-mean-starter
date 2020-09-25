@@ -1,18 +1,9 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
 	selector: 'todos-nav',
 	templateUrl: './nav.component.html',
 	styleUrls: ['./nav.component.scss'],
-	encapsulation: ViewEncapsulation.None
+	encapsulation: ViewEncapsulation.None,
 })
-export class NavComponent implements OnInit
-{
-
-	constructor() { }
-
-	ngOnInit()
-	{
-	}
-
-}
+export class NavComponent {}

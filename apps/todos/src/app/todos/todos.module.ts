@@ -12,11 +12,14 @@ import {
 	ModalModule,
 	CardsModule,
 	CheckboxModule,
-	InputsModule
+	InputsModule,
 } from 'angular-bootstrap-md';
 import { TodoFormComponent } from './todo-form/todo-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BsDatepickerModule, BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
+import {
+	BsDatepickerModule,
+	BsDatepickerConfig,
+} from 'ngx-bootstrap/datepicker';
 
 @NgModule({
 	declarations: [TodosComponent, TodoFormComponent],
@@ -31,9 +34,15 @@ import { BsDatepickerModule, BsDatepickerConfig } from 'ngx-bootstrap/datepicker
 		FormsModule,
 		ReactiveFormsModule,
 		InputsModule,
-		BsDatepickerModule.forRoot()
+		BsDatepickerModule.forRoot(),
 	],
-	providers: [TodoService, MDBModalService, MDBModalRef, ModalOptions, BsDatepickerConfig],
-	entryComponents: [TodoFormComponent]
+	providers: [
+		TodoService,
+		MDBModalService,
+		MDBModalRef,
+		ModalOptions,
+		BsDatepickerConfig,
+	],
+	entryComponents: [TodoFormComponent],
 })
 export class TodosModule {}
