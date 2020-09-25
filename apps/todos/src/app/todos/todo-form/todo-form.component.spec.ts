@@ -7,23 +7,19 @@ import { mockProvider } from '@ngneat/spectator/jest';
 import { TodoService } from '../todo.service';
 import { BehaviorSubject } from 'rxjs';
 
-describe('TodoFormComponent', () =>
-{
-	let spectator:Spectator<TodoFormComponent>;
+describe('TodoFormComponent', () => {
+	let spectator: Spectator<TodoFormComponent>;
 	const createComponent = createComponentFactory({
 		imports: [ReactiveFormsModule],
 		component: TodoFormComponent,
 		componentProviders: [
 			mockProvider(TodoService, { todos$: new BehaviorSubject([]) }),
-			mockProvider(ModalOptions, { data: {} })
+			mockProvider(ModalOptions, { data: {} }),
 		],
-		mocks: [
-			MDBModalRef
-		]
+		mocks: [MDBModalRef],
 	});
 
-	it('should create', () =>
-	{
+	it('should create', () => {
 		spectator = createComponent();
 
 		expect(spectator.component).toBeTruthy();

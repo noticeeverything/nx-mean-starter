@@ -5,7 +5,7 @@ module.exports = {
 	snapshotSerializers: [
 		'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
 		'jest-preset-angular/build/AngularSnapshotSerializer.js',
-		'jest-preset-angular/build/HTMLCommentSerializer.js'
+		'jest-preset-angular/build/HTMLCommentSerializer.js',
 	],
 	setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
 	globals: {
@@ -15,9 +15,9 @@ module.exports = {
 			astTransformers: {
 				before: [
 					'jest-preset-angular/build/InlineFilesTransformer',
-					'jest-preset-angular/build/StripStylesTransformer'
-				]
-			}
-		}
-	}
+					'jest-preset-angular/build/StripStylesTransformer',
+				],
+			},
+		},
+	},
 };

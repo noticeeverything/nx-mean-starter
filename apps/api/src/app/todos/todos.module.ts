@@ -6,9 +6,9 @@ import { TodoController } from './todo.controller';
 
 @Module({
 	imports: [
-		MongooseModule.forFeature([{ name: 'Todo', schema: TodoSchema }])
+		MongooseModule.forFeature([{ name: 'Todo', schema: TodoSchema }]),
 	],
 	providers: [TodoService],
-	controllers: [TodoController]
+	controllers: [TodoController],
 })
 export class TodosModule {}

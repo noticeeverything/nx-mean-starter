@@ -4,15 +4,10 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 	selector: 'todos-nav',
 	templateUrl: './nav.component.html',
 	styleUrls: ['./nav.component.scss'],
-	encapsulation: ViewEncapsulation.None
+	encapsulation: ViewEncapsulation.None,
 })
-export class NavComponent implements OnInit
-{
+export class NavComponent implements OnInit {
+	constructor() {}
 
-	constructor() { }
-
-	ngOnInit()
-	{
-	}
-
+	ngOnInit() {}
 }

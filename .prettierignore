@@ -1,0 +1,10 @@
+# Add files here to ignore them from prettier formatting
+
+/dist
+**/*/dist
+/coverage
+/node_modules
+**/*/node_modules
+/.idea
+/.git
+docker-compose.yml

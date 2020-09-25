@@ -13,8 +13,7 @@
 
 const { preprocessTypescript } = require('@nrwl/cypress/plugins/preprocessor');
 
-module.exports = (on, config) =>
-{
+module.exports = (on, config) => {
 	// `on` is used to hook into various events Cypress emits
 	// `config` is the resolved Cypress config
 
@@ -22,11 +21,10 @@ module.exports = (on, config) =>
 	on('file:preprocessor', preprocessTypescript(config));
 
 	on('task', {
-		async 'db:teardown'()
-		{
+		async 'db:teardown'() {
 			const teardown = require('../db/teardown');
 			await teardown();
 			return null;
-		}
+		},
 	});
 };

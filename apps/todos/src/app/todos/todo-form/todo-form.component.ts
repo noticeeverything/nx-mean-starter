@@ -8,70 +8,62 @@ import * as moment from 'moment';
 @Component({
 	selector: 'todos-todo-form',
 	templateUrl: './todo-form.component.html',
-	styleUrls: ['./todo-form.component.scss']
+	styleUrls: ['./todo-form.component.scss'],
 })
-export class TodoFormComponent implements OnInit
-{
-	error:string;
+export class TodoFormComponent implements OnInit {
+	error: string;
 
 	submitting = false;
 
-	todo:Todo;
+	todo: Todo;
 
-	todoForm:FormGroup = this.formBuilder.group({
+	todoForm: FormGroup = this.formBuilder.group({
 		title: [null, [Validators.required]],
 		description: [null],
 		due: [null, [Validators.required]],
-		done: [false, Validators.required]
+		done: [false, Validators.required],
 	});
 
 	constructor(
-		private readonly formBuilder:FormBuilder,
-		private readonly modalRef:MDBModalRef,
-		private readonly todoService:TodoService,
-		private readonly modalOptions:ModalOptions
-	)
-	{ }
+		private readonly formBuilder: FormBuilder,
+		private readonly modalRef: MDBModalRef,
+		private readonly todoService: TodoService,
+		private readonly modalOptions: ModalOptions,
+	) {}
 
-	ngOnInit()
-	{
-		if (this.modalOptions.data.hasOwnProperty('todo'))
-		{
+	ngOnInit() {
+		if (this.modalOptions.data.hasOwnProperty('todo')) {
 			this.todo = this.modalOptions.data['todo'];
 			this.todo.due = moment(this.todo.due).toDate();
 			this.todoForm.patchValue(this.todo);
 		}
 	}
 
-	Close()
-	{
+	Close() {
 		this.modalRef.hide();
 	}
 
-	Submit()
-	{
+	Submit() {
 		this.submitting = true;
 		this.error = undefined;
 
 		const form = this.todoForm.getRawValue();
 		if (this.todo) form._id = this.todo._id;
 
-		const obs = this.todo ?
-			this.todoService.Update(form) :
-			this.todoService.Add(form);
+		const obs = this.todo
+			? this.todoService.Update(form)
+			: this.todoService.Add(form);
 
 		return obs.subscribe(
-			res =>
-			{
+			(res) => {
 				this.submitting = false;
 				if (res.success) return this.modalRef.hide();
 				this.error = res.message;
 			},
-			err =>
-			{
+			(err) => {
 				this.error = err.message;
 				this.submitting = false;
-			}
+			},
 		);
 	}
 }

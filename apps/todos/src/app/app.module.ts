@@ -9,8 +9,16 @@ import { NavbarModule, IconsModule, WavesModule } from 'angular-bootstrap-md';
 
 @NgModule({
 	declarations: [AppComponent, NavComponent],
-	imports: [BrowserModule, HttpClientModule, AppRoutingModule, BrowserAnimationsModule, NavbarModule, IconsModule, WavesModule],
+	imports: [
+		BrowserModule,
+		HttpClientModule,
+		AppRoutingModule,
+		BrowserAnimationsModule,
+		NavbarModule,
+		IconsModule,
+		WavesModule,
+	],
 	providers: [],
-	bootstrap: [AppComponent]
+	bootstrap: [AppComponent],
 })
 export class AppModule {}

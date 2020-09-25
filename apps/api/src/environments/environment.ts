@@ -5,19 +5,17 @@ export const environment = {
 		uri: 'mongodb://localhost:27017/nx-mean-starter',
 		options: {
 			useNewUrlParser: true,
-			useUnifiedTopology: true
-		}
+			useUnifiedTopology: true,
+		},
 	},
 	http: {
 		host: 'localhost',
 		port: 3333,
 		ip: '127.0.0.1',
 		cors: {
-			origin: [
-				/localhost/
-			],
-			credentials: true
+			origin: [/localhost/],
+			credentials: true,
 		},
-		ssl: false
-	}
+		ssl: false,
+	},
 };
