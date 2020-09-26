@@ -28,7 +28,7 @@ describe('Todos Page', () => {
 
 	it('edits the todo', () => {
 		cy.editTodo();
-		cy.get('mdb-card span.fa-pencil-alt').click();
+		cy.get('td span.fa-pencil-alt').click();
 		cy.get('#title').type('{selectAll}My New Todo');
 		cy.get('#due').type(
 			`{selectall}${moment().add(3, 'days').format('MM/DD/YYYY')}`,
@@ -42,10 +42,10 @@ describe('Todos Page', () => {
 	});
 
 	it('colors the todo danger given due date is past', () => {
-		cy.get('mdb-card').then((el) => el.hasClass('alert-info'));
+		cy.get('tbody tr').then((el) => el.hasClass('alert-info'));
 		cy.editTodo();
 		cy.wait(500);
-		cy.get('mdb-card span.fa-pencil-alt').click();
+		cy.get('td span.fa-pencil-alt').click();
 		cy.get('#due').type(
 			`{selectall}${moment().subtract(1, 'day').format('MM/DD/YYYY')}`,
 		);
@@ -54,21 +54,21 @@ describe('Todos Page', () => {
 		cy.wait('@editTodoCheck').then((xhr) => {
 			assert.equal(xhr.response.body['success'], true);
 		});
-		cy.get('mdb-card').then((el) => el.hasClass('alert-danger'));
+		cy.get('tbody tr').then((el) => el.hasClass('alert-danger'));
 	});
 
 	it('colors the todo warning given due date is imminent', () => {
-		cy.get('mdb-card').then((el) => el.hasClass('alert-info'));
+		cy.get('tbody tr').then((el) => el.hasClass('alert-info'));
 		cy.editTodo();
 		cy.wait(500);
-		cy.get('mdb-card span.fa-pencil-alt').click();
+		cy.get('td span.fa-pencil-alt').click();
 		cy.get('#due').type(`{selectall}${moment().format('MM/DD/YYYY')}`);
 		cy.get('#due').click();
 		cy.get('.modal-footer button:first-child').click();
 		cy.wait('@editTodoCheck').then((xhr) => {
 			assert.equal(xhr.response.body['success'], true);
 		});
-		cy.get('mdb-card').then((el) => el.hasClass('alert-warning'));
+		cy.get('tbody tr').then((el) => el.hasClass('alert-warning'));
 	});
 
 	it('completes the todo', () => {
@@ -78,13 +78,13 @@ describe('Todos Page', () => {
 		cy.wait('@editTodoCheck').then((xhr) => {
 			assert.equal(xhr.response.body['success'], true);
 		});
-		cy.get('mdb-card').then((el) => el.hasClass('alert-success'));
+		cy.get('tbody tr').then((el) => el.hasClass('alert-success'));
 	});
 
 	it('deletes the todo', () => {
 		cy.deleteTodo();
 		cy.wait(500);
-		cy.get('mdb-card span.fa-trash').click();
+		cy.get('td span.fa-trash').click();
 		cy.wait('@deleteTodoCheck').then((xhr) =>
 			assert.equal(xhr.response.body['success'], true),
 		);

@@ -34,63 +34,73 @@
 						add
 					</button>
 				</div>
-				<hr />
-				<mdb-card
-					*ngFor="let todo of todos"
-					[ngClass]="{
-						'alert-success': todo.done,
-						'alert-warning': todo.isDueShortly() && !todo.done,
-						'alert-danger':
-							todo.isOverdue() &&
-							!todo.isDueShortly() &&
-							!todo.done,
-						'alert-info':
-							!todo.done &&
-							!todo.isOverdue() &&
-							!todo.isDueShortly()
-					}"
-					style="float: left; width: 32%; margin: 5px"
-				>
-					<mdb-card-header class="px-5">
-						<mdb-checkbox
-							(change)="ToggleDone(todo)"
-							[(ngModel)]="todo.done"
-						></mdb-checkbox>
-						<span [ngClass]="{ 'line-through': todo.done }">{{
-							todo.title
-						}}</span>
-						<span
-							*ngIf="
-								todo.isOverdue() &&
-								!todo.isDueShortly() &&
-								!todo.done
-							"
-							>&nbsp;(overdue)</span
+				<table class="table table-borderless">
+					<thead>
+						<tr>
+							<th>Done</th>
+							<th>Title</th>
+							<th class="d-none d-md-block">Due</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr
+							*ngFor="let todo of todos"
+							[ngClass]="{
+								'alert-success': todo.done,
+								'alert-warning':
+									todo.isDueShortly() && !todo.done,
+								'alert-danger':
+									todo.isOverdue() &&
+									!todo.isDueShortly() &&
+									!todo.done,
+								'alert-info':
+									!todo.done &&
+									!todo.isOverdue() &&
+									!todo.isDueShortly()
+							}"
 						>
-						&nbsp;
-						<span
-							(click)="Edit(todo)"
-							class="fa fa-pencil-alt"
-						></span>
-						&nbsp;
-						<span
-							(click)="Delete(todo)"
-							class="fas fa-trash"
-						></span>
-					</mdb-card-header>
-					<mdb-card-body>
-						<p
-							*ngIf="todo.description"
-							[ngClass]="{ 'line-through': todo.done }"
-							class="lead"
-						>
-							{{ todo.description }}
-						</p>
-						<span *ngIf="!todo.done"
-							>Due: {{ todo.due | date: 'mediumDate' }}</span
-						>
-					</mdb-card-body>
-				</mdb-card>
+							<td>
+								<mdb-checkbox
+									(change)="ToggleDone(todo)"
+									[(ngModel)]="todo.done"
+								>
+								</mdb-checkbox>
+							</td>
+							<td [ngClass]="{ 'line-through': todo.done }">
+								{{ todo.title }}
+								<span
+									*ngIf="
+										todo.isOverdue() &&
+										!todo.isDueShortly() &&
+										!todo.done
+									"
+								>
+									&nbsp;(overdue)
+								</span>
+							</td>
+							<td class="d-none d-md-block">
+								{{ todo.due | date: 'shortDate' }}
+							</td>
+							<td>
+								<span
+									(click)="View(todo)"
+									class="fa fa-eye"
+								></span>
+								&nbsp;
+								<span
+									(click)="Edit(todo)"
+									class="fa fa-pencil-alt"
+								></span>
+								&nbsp;
+								<span
+									(click)="Delete(todo)"
+									class="fas fa-trash"
+								></span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 
 				<div class="clearfix"></div>
 				<div *ngIf="error">
