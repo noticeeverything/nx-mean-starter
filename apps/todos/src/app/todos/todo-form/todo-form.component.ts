@@ -8,7 +8,6 @@ import * as moment from 'moment';
 @Component({
 	selector: 'todos-todo-form',
 	templateUrl: './todo-form.component.html',
-	styleUrls: ['./todo-form.component.scss'],
 })
 export class TodoFormComponent implements OnInit {
 	error: string;

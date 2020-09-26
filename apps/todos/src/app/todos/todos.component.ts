@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { TodoService } from './todo.service';
 import { BaseComponent } from '@noticeeverything/ngx-core';
 import { Todo, TodoDto } from '@nx-mean-starter/api-interfaces';
 import { takeUntil, filter } from 'rxjs/operators';
 import { MDBModalService } from 'angular-bootstrap-md';
 import { TodoFormComponent } from './todo-form/todo-form.component';
+import { TodoViewComponent } from './todo-view/todo-view.component';
 
 @Component({
 	selector: 'todos-todos',
 	templateUrl: './todos.component.html',
 	styleUrls: ['./todos.component.scss'],
+	encapsulation: ViewEncapsulation.None,
 })
 export class TodosComponent extends BaseComponent implements OnInit {
 	error: string;
@@ -62,5 +64,9 @@ export class TodosComponent extends BaseComponent implements OnInit {
 				this.error = err.message;
 			},
 		);
+	}
+
+	View(todo: Todo) {
+		this.modalService.show(TodoViewComponent, { data: { todo } });
 	}
 }

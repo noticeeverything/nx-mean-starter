@@ -22,7 +22,7 @@
 		"e2e": "run-p -r start.api.test 'nx e2e --headless'",
 		"e2e.watch": "run-p -l start.api.test 'nx e2e --watch'",
 		"format:check": "nx format:check",
-		"format": "nx format:write --all",
+		"format": "nx format:write --base=origin/master",
 		"help": "nx help",
 		"lint": "nx workspace-lint && nx lint",
 		"ng": "nx",

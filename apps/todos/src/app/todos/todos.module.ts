@@ -20,9 +20,10 @@ import {
 	BsDatepickerModule,
 	BsDatepickerConfig,
 } from 'ngx-bootstrap/datepicker';
+import { TodoViewComponent } from './todo-view/todo-view.component';
 
 @NgModule({
-	declarations: [TodosComponent, TodoFormComponent],
+	declarations: [TodosComponent, TodoFormComponent, TodoViewComponent],
 	imports: [
 		CommonModule,
 		TodosRoutingModule,
@@ -43,6 +44,6 @@ import {
 		ModalOptions,
 		BsDatepickerConfig,
 	],
-	entryComponents: [TodoFormComponent],
+	entryComponents: [TodoFormComponent, TodoViewComponent],
 })
 export class TodosModule {}

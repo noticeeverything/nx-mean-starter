@@ -1,0 +1,40 @@
+<div class="modal-header">
+	<p class="lead">{{ todo.title }}</p>
+</div>
+<div class="modal-body">
+	<p class="lead" *ngIf="todo.description">{{ todo.description }}</p>
+	<p
+		class="lead"
+		[ngClass]="{
+			'text-success': todo.done,
+			'text-warning': todo.isDueShortly() && !todo.done,
+			'text-danger':
+				todo.isOverdue() && !todo.isDueShortly() && !todo.done,
+			'text-info': !todo.done && !todo.isOverdue() && !todo.isDueShortly()
+		}"
+	>
+		{{
+			todo.done
+				? 'DONE'
+				: todo.isDueShortly()
+				? 'DUE SHORTLY'
+				: todo.isOverdue()
+				? 'OVERDUE'
+				: 'pending'
+		}}
+	</p>
+</div>
+
+<div class="modal-footer">
+	<div class="form-group">
+		<button
+			(click)="Close()"
+			color="dark"
+			mdbBtn
+			mdbWavesEffect
+			outline="true"
+		>
+			close
+		</button>
+	</div>
+</div>
